@@ -286,8 +286,11 @@ footer .links a { font-size: 14px; color: var(--text-muted); }
 footer .links a:hover { color: var(--text-secondary); }
 
 /* Scroll Reveal */
-.reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s, transform .6s; }
-.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal { opacity: 1; transform: none; transition: opacity .6s, transform .6s; }
+@media (prefers-reduced-motion: no-preference) {
+  .reveal { opacity: 0; transform: translateY(24px); }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+}
 
 /* Mobile */
 @media (max-width: 768px) {
